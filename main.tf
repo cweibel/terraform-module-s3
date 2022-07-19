@@ -5,12 +5,17 @@ variable name_suffix                {} # The suffix to the name of the bucket   
 variable resource_tags              {} # AWS tags to apply to resources                          (required)
 
 
+variable force_destroy               { default = false }
+
+
+
+
 
 resource "aws_s3_bucket" "s3" {
 
   bucket = "${var.name_prefix}-${var.name_suffix}"
   tags   = merge({Name = "${var.name_prefix}-${var.name_suffix}"}, var.resource_tags )
-
+  force_destroy = var.force_destroy 
 }
 
 

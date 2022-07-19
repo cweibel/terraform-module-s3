@@ -12,7 +12,7 @@ Inputs - Required:
 
 Inputs - Optional: 
 
- - None
+ - `force_destroy` - Allow a non-empty bucket to be destroyed on `terraform destroy` command
 
 Outputs:
 
